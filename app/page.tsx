@@ -5,9 +5,8 @@ import { toPng } from "html-to-image";
 import { saveAs } from "file-saver";
 
 export default function Home() {
-  const [nombre, setNombre] = useState("");
-
   const previewRef = useRef<HTMLDivElement>(null);
+  const [nombre, setNombre] = useState("");
 
 const [fechaNacimiento, setFechaNacimiento] =
   useState("");
