@@ -296,7 +296,25 @@ return (
             </h2>
           </div>
         </div>
+</div>
 
+<button
+  onClick={descargarPNG}
+  style={{
+    width: "100%",
+    marginTop: "12px",
+    padding: "12px",
+    background: "#16a34a",
+    color: "white",
+    border: "none",
+    borderRadius: "12px",
+    fontWeight: "bold",
+    cursor: "pointer",
+  }}
+>
+  📸 Descargar PNG
+</button>
+      
         {/* PREVIEW */}
 
         <div
@@ -371,23 +389,6 @@ return (
   {" "}
   {fechaNacimiento}
 </div>
-
-            <button
-  onClick={descargarPNG}
-  style={{
-    width: "100%",
-    marginTop: "12px",
-    padding: "12px",
-    background: "#16a34a",
-    color: "white",
-    border: "none",
-    borderRadius: "12px",
-    fontWeight: "bold",
-    cursor: "pointer",
-  }}
->
-  📸 Descargar PNG
-</button>
             
             <div style={{ marginTop: "12px" }}>
               <b>WhatsApp:</b> {whatsapp}
