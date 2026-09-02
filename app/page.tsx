@@ -109,6 +109,28 @@ return (
     }}
   >
     Nombre y Apellido
+
+<div>
+  <label
+    style={{
+      display: "block",
+      marginBottom: "6px",
+      fontWeight: "bold",
+    }}
+  >
+    Número de CI
+  </label>
+
+  <input
+    value={ci}
+    onChange={(e) => setCi(e.target.value)}
+    style={{
+      width: "100%",
+      padding: "10px",
+    }}
+  />
+</div>
+    
   </label>
 
   <input
@@ -312,8 +334,7 @@ return (
 >
   📸 Descargar PNG
 </button>
-          
-        </div>
+        
 </div>
       
         {/* PREVIEW */}
