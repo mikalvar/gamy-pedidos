@@ -358,7 +358,21 @@ return (
               </h3>
             </div>
 
-<button
+            <div style={{ marginTop: "20px" }}>
+              <b>Nombre:</b> {nombre}
+            </div>
+
+            <div style={{ marginTop: "12px" }}>
+              <b>CI:</b> {ci}
+            </div>
+
+            <div style={{ marginTop: "12px" }}>
+  <b>Fecha Nac:</b>
+  {" "}
+  {fechaNacimiento}
+</div>
+
+            <button
   onClick={descargarPNG}
   style={{
     width: "100%",
@@ -374,21 +388,7 @@ return (
 >
   📸 Descargar PNG
 </button>
-
-            <div style={{ marginTop: "20px" }}>
-              <b>Nombre:</b> {nombre}
-            </div>
-
-            <div style={{ marginTop: "12px" }}>
-              <b>CI:</b> {ci}
-            </div>
-
-            <div style={{ marginTop: "12px" }}>
-  <b>Fecha Nac:</b>
-  {" "}
-  {fechaNacimiento}
-</div>
-
+            
             <div style={{ marginTop: "12px" }}>
               <b>WhatsApp:</b> {whatsapp}
             </div>
