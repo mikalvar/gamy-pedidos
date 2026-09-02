@@ -369,7 +369,7 @@ return (
               fontWeight: "bold",
             }}
           >
-            ORDEN DE ENVÍO
+            ORDEN DE ENVÍO Y PAGARÉ
           </div>
 
           <div
@@ -385,6 +385,16 @@ return (
               }}
             >
               GAMY PERFUMES
+              <p
+  style={{
+    textAlign: "center",
+    color: "#64748b",
+    fontSize: "12px",
+    marginTop: "6px",
+  }}
+>
+  Información para Delivery y Cobranza
+</p>
             </h2>
 
             <div
@@ -459,9 +469,48 @@ return (
   {horario}
 </div>
             
-            <div style={{ marginTop: "20px" }}>
-              <b>Financiación:</b>
-            </div>
+            <div
+  style={{
+    marginTop: "20px",
+    background: "#f8fafc",
+    padding: "16px",
+    borderRadius: "12px",
+    border: "1px solid #e2e8f0",
+  }}
+>
+  <b>PLAN DE FINANCIACIÓN</b>
+
+  <div style={{ marginTop: "10px" }}>
+    {cuotas} cuotas x Gs{" "}
+    {montoCuota.toLocaleString("es-PY")}
+  </div>
+
+  <div style={{ marginTop: "8px" }}>
+    Entrega Inicial:
+    {" "}
+    Gs {entregaInicial.toLocaleString("es-PY")}
+  </div>
+
+  <div style={{ marginTop: "8px" }}>
+    Delivery:
+    {" "}
+    Gs {delivery.toLocaleString("es-PY")}
+  </div>
+
+  <hr style={{ margin: "10px 0" }} />
+
+  <div
+    style={{
+      fontSize: "20px",
+      fontWeight: "bold",
+      color: "#b45309",
+    }}
+  >
+    TOTAL:
+    {" "}
+    Gs {total.toLocaleString("es-PY")}
+  </div>
+</div>
 
             <div style={{ marginTop: "10px" }}>
               Entrega Inicial: Gs{" "}
@@ -491,6 +540,42 @@ return (
 
             <div style={{ marginTop: "10px" }}>
               Vendedor: {vendedor}
+
+<div
+  style={{
+    marginTop: "40px",
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gap: "20px",
+  }}
+>
+  <div>
+    <hr />
+    <div
+      style={{
+        textAlign: "center",
+        marginTop: "8px",
+        fontSize: "12px",
+      }}
+    >
+      Firma Cliente
+    </div>
+  </div>
+
+  <div>
+    <hr />
+    <div
+      style={{
+        textAlign: "center",
+        marginTop: "8px",
+        fontSize: "12px",
+      }}
+    >
+      Firma Vendedor
+    </div>
+  </div>
+</div>
+              
             </div>
           </div>
         </div>
