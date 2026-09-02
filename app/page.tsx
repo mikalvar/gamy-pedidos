@@ -319,6 +319,7 @@ return (
           </div>
 
 <button
+  id="btn-descargar"
   onClick={descargarPNG}
   style={{
     width: "100%",
