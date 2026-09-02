@@ -4,6 +4,15 @@ import { useMemo, useState } from "react";
 
 export default function Home() {
   const [nombre, setNombre] = useState("");
+
+const [fechaNacimiento, setFechaNacimiento] =
+  useState("");
+
+const [maps, setMaps] = useState("");
+
+const [horario, setHorario] =
+  useState("");
+  
   const [ci, setCi] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
 
@@ -74,19 +83,52 @@ export default function Home() {
               gap: "12px",
             }}
           >
-            <input
-              placeholder="Nombre y Apellido"
-              value={nombre}
-              onChange={(e) =>
-                setNombre(e.target.value)
-              }
-            />
+            <div>
+  <label
+    style={{
+      display: "block",
+      marginBottom: "6px",
+      fontWeight: "bold",
+    }}
+  >
+    Nombre y Apellido
+  </label>
 
-            <input
-              placeholder="Número de CI"
-              value={ci}
-              onChange={(e) => setCi(e.target.value)}
-            />
+  <input
+    value={nombre}
+    onChange={(e) =>
+      setNombre(e.target.value)
+    }
+    style={{
+      width: "100%",
+      padding: "10px",
+    }}
+  />
+</div>
+
+            <div>
+  <label
+    style={{
+      display: "block",
+      marginBottom: "6px",
+      fontWeight: "bold",
+    }}
+  >
+    Fecha de Nacimiento
+  </label>
+
+  <input
+    type="date"
+    value={fechaNacimiento}
+    onChange={(e) =>
+      setFechaNacimiento(e.target.value)
+    }
+    style={{
+      width: "100%",
+      padding: "10px",
+    }}
+  />
+</div>
 
             <input
               placeholder="WhatsApp"
@@ -112,6 +154,29 @@ export default function Home() {
               }
             />
 
+            <div>
+  <label
+    style={{
+      display: "block",
+      marginBottom: "6px",
+      fontWeight: "bold",
+    }}
+  >
+    Link Google Maps
+  </label>
+
+  <input
+    value={maps}
+    onChange={(e) =>
+      setMaps(e.target.value)
+    }
+    style={{
+      width: "100%",
+      padding: "10px",
+    }}
+  />
+</div>
+
             <input
               placeholder="Fragancia"
               value={fragancia}
@@ -120,6 +185,29 @@ export default function Home() {
               }
             />
 
+<div>
+  <label
+    style={{
+      display: "block",
+      marginBottom: "6px",
+      fontWeight: "bold",
+    }}
+  >
+    Disponibilidad Horaria
+  </label>
+
+  <input
+    value={horario}
+    onChange={(e) =>
+      setHorario(e.target.value)
+    }
+    style={{
+      width: "100%",
+      padding: "10px",
+    }}
+  />
+</div>
+            
             <input
               type="number"
               placeholder="Cantidad de Cuotas"
@@ -260,6 +348,12 @@ export default function Home() {
             </div>
 
             <div style={{ marginTop: "12px" }}>
+  <b>Fecha Nac:</b>
+  {" "}
+  {fechaNacimiento}
+</div>
+
+            <div style={{ marginTop: "12px" }}>
               <b>WhatsApp:</b> {whatsapp}
             </div>
 
@@ -271,10 +365,29 @@ export default function Home() {
               <b>Barrio:</b> {barrio}
             </div>
 
+<div style={{ marginTop: "12px" }}>
+  <b>Ubicación:</b>
+</div>
+
+<div
+  style={{
+    wordBreak: "break-word",
+    color: "#2563eb",
+  }}
+>
+  {maps}
+</div>
+            
             <div style={{ marginTop: "12px" }}>
               <b>Fragancia:</b> {fragancia}
             </div>
 
+<div style={{ marginTop: "12px" }}>
+  <b>Horario:</b>
+  {" "}
+  {horario}
+</div>
+            
             <div style={{ marginTop: "20px" }}>
               <b>Financiación:</b>
             </div>
