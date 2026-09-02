@@ -119,7 +119,27 @@ return (
       fontWeight: "bold",
     }}
   >
+
+<div>
+  <label
+    style={{
+      display: "block",
+      marginBottom: "6px",
+      fontWeight: "bold",
+    }}
+  >
     Nombre y Apellido
+  </label>
+
+  <input
+    value={nombre}
+    onChange={(e) => setNombre(e.target.value)}
+    style={{
+      width: "100%",
+      padding: "10px",
+    }}
+  />
+</div>
 
 <div>
   <label
@@ -141,8 +161,6 @@ return (
     }}
   />
 </div>
-    
-  </label>
 
   <input
     value={nombre}
@@ -378,14 +396,16 @@ return (
             }}
           >
             <h2
-              style={{
-                textAlign: "center",
-                color: "#b45309",
-                fontSize: "26px",
-              }}
-            >
-              GAMY PERFUMES
-              <p
+  style={{
+    textAlign: "center",
+    color: "#b45309",
+    fontSize: "26px",
+  }}
+>
+  GAMY PERFUMES
+</h2>
+
+<p
   style={{
     textAlign: "center",
     color: "#64748b",
