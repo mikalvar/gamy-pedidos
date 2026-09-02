@@ -34,7 +34,7 @@ const [horario, setHorario] =
 
   const fechaRegistro = new Date().toLocaleDateString("es-PY");
 
-  cconst total = useMemo(() => {
+  const total = useMemo(() => {
   return cuotas * montoCuota + entregaInicial + delivery;
 }, [
   cuotas,
@@ -58,7 +58,6 @@ const descargarPNG = async () => {
 };
 
 return (
-`
     <main
       style={{
         minHeight: "100vh",
