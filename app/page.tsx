@@ -334,7 +334,7 @@ return (
 >
   📸 Descargar PNG
 </button>
-        
+
 </div>
       
         {/* PREVIEW */}
