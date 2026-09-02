@@ -46,10 +46,21 @@ const [horario, setHorario] =
 const descargarPNG = async () => {
   if (!previewRef.current) return;
 
+  const boton =
+    document.getElementById("btn-descargar");
+
+  if (boton) {
+    boton.style.display = "none";
+  }
+
   const dataUrl = await toPng(previewRef.current, {
     quality: 1,
     pixelRatio: 2,
   });
+
+  if (boton) {
+    boton.style.display = "block";
+  }
 
   saveAs(
     dataUrl,
