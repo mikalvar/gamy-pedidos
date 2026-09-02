@@ -1,9 +1,13 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
+import { toPng } from "html-to-image";
+import { saveAs } from "file-saver";
 
 export default function Home() {
   const [nombre, setNombre] = useState("");
+
+  const previewRef = useRef<HTMLDivElement>(null);
 
 const [fechaNacimiento, setFechaNacimiento] =
   useState("");
@@ -31,16 +35,31 @@ const [horario, setHorario] =
 
   const fechaRegistro = new Date().toLocaleDateString("es-PY");
 
-  const total = useMemo(() => {
-    return cuotas * montoCuota + entregaInicial + delivery;
-  }, [
-    cuotas,
-    montoCuota,
-    entregaInicial,
-    delivery,
-  ]);
+  cconst total = useMemo(() => {
+  return cuotas * montoCuota + entregaInicial + delivery;
+}, [
+  cuotas,
+  montoCuota,
+  entregaInicial,
+  delivery,
+]);
 
-  return (
+const descargarPNG = async () => {
+  if (!previewRef.current) return;
+
+  const dataUrl = await toPng(previewRef.current, {
+    quality: 1,
+    pixelRatio: 2,
+  });
+
+  saveAs(
+    dataUrl,
+    `pedido-${ci || "cliente"}.png`
+  );
+};
+
+return (
+`
     <main
       style={{
         minHeight: "100vh",
