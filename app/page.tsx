@@ -7,20 +7,16 @@ import { saveAs } from "file-saver";
 export default function Home() {
   const previewRef = useRef<HTMLDivElement>(null);
 
-  // Datos del Cliente
+  // Estados
   const [nombre, setNombre] = useState("");
   const [ci, setCi] = useState("");
   const [fechaNacimiento, setFechaNacimiento] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
-
-  // Ubicación y Entrega
   const [ciudad, setCiudad] = useState("");
   const [barrio, setBarrio] = useState("");
   const [maps, setMaps] = useState("");
-  const [horario, setHorario] = useState("");
-
-  // Producto y Venta
   const [fragancia, setFragancia] = useState("");
+  const [horario, setHorario] = useState("");
   const [vendedor, setVendedor] = useState("");
 
   // Financiación
@@ -43,9 +39,9 @@ export default function Home() {
         quality: 1,
         pixelRatio: 2,
       });
-      saveAs(dataUrl, `orden-envio-${ci || "cliente"}.png`);
+      saveAs(dataUrl, `orden-${ci || "cliente"}.png`);
     } catch (err) {
-      console.error("Error al generar PNG:", err);
+      console.error("Error al exportar imagen:", err);
     }
   };
 
@@ -55,7 +51,7 @@ export default function Home() {
     borderRadius: "8px",
     border: "1px solid #d1d5db",
     fontSize: "14px",
-    outline: "none",
+    boxSizing: "border-box" as const,
   };
 
   const labelStyle = {
@@ -67,13 +63,13 @@ export default function Home() {
   };
 
   return (
-    <main style={{ minHeight: "100vh", background: "#f3f4f6", padding: "32px 16px" }}>
+    <main style={{ minHeight: "100vh", background: "#f3f4f6", padding: "24px" }}>
       <div
         style={{
           maxWidth: "1300px",
           margin: "0 auto",
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(420px, 1fr))",
           gap: "24px",
           alignItems: "start",
         }}
@@ -83,24 +79,23 @@ export default function Home() {
           style={{
             background: "white",
             borderRadius: "16px",
-            padding: "28px",
+            padding: "24px",
             border: "1px solid #e5e7eb",
-            boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
+            boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
           }}
         >
           <h1 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "20px", color: "#111827" }}>
             Gamy Pedidos
           </h1>
 
-          <div style={{ display: "grid", gap: "16px" }}>
-            {/* Datos Personales */}
+          <div style={{ display: "grid", gap: "14px" }}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
               <div>
                 <label style={labelStyle}>Nombre y Apellido</label>
                 <input
                   value={nombre}
                   onChange={(e) => setNombre(e.target.value)}
-                  placeholder="Ej: María Pérez"
+                  placeholder="Nombre completo"
                   style={inputStyle}
                 />
               </div>
@@ -132,20 +127,19 @@ export default function Home() {
                 <input
                   value={whatsapp}
                   onChange={(e) => setWhatsapp(e.target.value)}
-                  placeholder="0981 xxx xxx"
+                  placeholder="098x xxx xxx"
                   style={inputStyle}
                 />
               </div>
             </div>
 
-            {/* Dirección */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
               <div>
                 <label style={labelStyle}>Ciudad</label>
                 <input
                   value={ciudad}
                   onChange={(e) => setCiudad(e.target.value)}
-                  placeholder="Ej: Asunción"
+                  placeholder="Ciudad"
                   style={inputStyle}
                 />
               </div>
@@ -155,7 +149,7 @@ export default function Home() {
                 <input
                   value={barrio}
                   onChange={(e) => setBarrio(e.target.value)}
-                  placeholder="Ej: Centro"
+                  placeholder="Barrio"
                   style={inputStyle}
                 />
               </div>
@@ -171,7 +165,6 @@ export default function Home() {
               />
             </div>
 
-            {/* Detalles del Pedido */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
               <div>
                 <label style={labelStyle}>Fragancia</label>
@@ -194,19 +187,19 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Financiación */}
+            {/* Plan de Pago */}
             <div
               style={{
                 background: "#f9fafb",
-                padding: "16px",
-                borderRadius: "12px",
-                border: "1px solid #f3f4f6",
+                padding: "14px",
+                borderRadius: "10px",
+                border: "1px solid #e5e7eb",
                 display: "grid",
                 gap: "12px",
               }}
             >
-              <span style={{ fontWeight: "bold", fontSize: "14px", color: "#374151" }}>
-                Detalles de Pago
+              <span style={{ fontWeight: "bold", fontSize: "13px", color: "#374151" }}>
+                Plan de Financiación
               </span>
 
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
@@ -271,16 +264,16 @@ export default function Home() {
 
           <div
             style={{
-              marginTop: "20px",
+              marginTop: "16px",
               background: "#fef3c7",
               padding: "16px",
-              borderRadius: "12px",
+              borderRadius: "10px",
               border: "1px solid #fde68a",
               textAlign: "center",
             }}
           >
-            <div style={{ fontSize: "14px", fontWeight: "600", color: "#92400e" }}>TOTAL A COBRAR</div>
-            <h2 style={{ fontSize: "32px", fontWeight: "bold", color: "#78350f", margin: "4px 0 0 0" }}>
+            <div style={{ fontSize: "13px", fontWeight: "bold", color: "#92400e" }}>TOTAL A COBRAR</div>
+            <h2 style={{ fontSize: "30px", fontWeight: "bold", color: "#78350f", margin: "4px 0 0 0" }}>
               Gs {total.toLocaleString("es-PY")}
             </h2>
           </div>
@@ -290,7 +283,7 @@ export default function Home() {
             style={{
               width: "100%",
               marginTop: "16px",
-              padding: "14px",
+              padding: "12px",
               background: "#16a34a",
               color: "white",
               border: "none",
@@ -298,7 +291,6 @@ export default function Home() {
               fontWeight: "bold",
               fontSize: "15px",
               cursor: "pointer",
-              boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
             }}
           >
             📸 Descargar PNG
@@ -313,17 +305,17 @@ export default function Home() {
             borderRadius: "16px",
             overflow: "hidden",
             border: "1px solid #e5e7eb",
-            boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
+            boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
           }}
         >
           <div
             style={{
               background: "#111827",
               color: "#f59e0b",
-              padding: "16px",
+              padding: "14px",
               fontWeight: "bold",
               textAlign: "center",
-              letterSpacing: "1px",
+              letterSpacing: "0.5px",
               fontSize: "14px",
             }}
           >
@@ -342,19 +334,19 @@ export default function Home() {
               style={{
                 marginTop: "16px",
                 border: "2px solid #f59e0b",
-                borderRadius: "12px",
-                padding: "14px",
+                borderRadius: "10px",
+                padding: "12px",
                 textAlign: "center",
                 background: "#fffbeb",
               }}
             >
               <div style={{ fontSize: "12px", fontWeight: "bold", color: "#92400e" }}>TOTAL A COBRAR</div>
-              <h3 style={{ fontSize: "30px", fontWeight: "bold", color: "#78350f", margin: "4px 0 0 0" }}>
+              <h3 style={{ fontSize: "28px", fontWeight: "bold", color: "#78350f", margin: "4px 0 0 0" }}>
                 Gs {total.toLocaleString("es-PY")}
               </h3>
             </div>
 
-            <div style={{ marginTop: "20px", display: "grid", gap: "10px", fontSize: "14px" }}>
+            <div style={{ marginTop: "20px", display: "grid", gap: "10px", fontSize: "14px", color: "#1f2937" }}>
               <div><b>Nombre:</b> {nombre || "-"}</div>
               <div><b>CI:</b> {ci || "-"}</div>
               <div><b>Fecha Nac:</b> {fechaNacimiento || "-"}</div>
@@ -373,29 +365,31 @@ export default function Home() {
 
             <div
               style={{
-                marginTop: "20px",
+                marginTop: "16px",
                 background: "#f8fafc",
-                padding: "16px",
-                borderRadius: "12px",
+                padding: "14px",
+                borderRadius: "10px",
                 border: "1px solid #e2e8f0",
               }}
             >
-              <b style={{ color: "#334155", display: "block", marginBottom: "8px" }}>PLAN DE FINANCIACIÓN</b>
-              <div style={{ fontSize: "13px", display: "grid", gap: "4px" }}>
+              <b style={{ color: "#334155", display: "block", marginBottom: "8px", fontSize: "13px" }}>
+                PLAN DE FINANCIACIÓN
+              </b>
+              <div style={{ fontSize: "13px", display: "grid", gap: "4px", color: "#475569" }}>
                 <div>• Entrega Inicial: Gs {entregaInicial.toLocaleString("es-PY")}</div>
                 <div>• {cuotas} cuota(s) de Gs {montoCuota.toLocaleString("es-PY")}</div>
                 <div>• Delivery: Gs {delivery.toLocaleString("es-PY")}</div>
               </div>
             </div>
 
-            <div style={{ marginTop: "20px", fontSize: "13px", color: "#64748b", display: "grid", gap: "4px" }}>
+            <div style={{ marginTop: "16px", fontSize: "13px", color: "#64748b", display: "grid", gap: "4px" }}>
               <div><b>Fecha Registro:</b> {fechaRegistro}</div>
               <div><b>Vendedor:</b> {vendedor || "-"}</div>
             </div>
 
             <div
               style={{
-                marginTop: "40px",
+                marginTop: "36px",
                 display: "grid",
                 gridTemplateColumns: "1fr 1fr",
                 gap: "24px",
@@ -403,13 +397,13 @@ export default function Home() {
             >
               <div style={{ textAlign: "center" }}>
                 <hr style={{ border: "none", borderTop: "1px solid #cbd5e1" }} />
-                <span style={{ fontSize: "12px", color: "#64748b", marginTop: "6px", display: "block" }}>
+                <span style={{ fontSize: "12px", color: "#64748b", marginTop: "4px", display: "block" }}>
                   Firma Cliente
                 </span>
               </div>
               <div style={{ textAlign: "center" }}>
                 <hr style={{ border: "none", borderTop: "1px solid #cbd5e1" }} />
-                <span style={{ fontSize: "12px", color: "#64748b", marginTop: "6px", display: "block" }}>
+                <span style={{ fontSize: "12px", color: "#64748b", marginTop: "4px", display: "block" }}>
                   Firma Vendedor
                 </span>
               </div>
