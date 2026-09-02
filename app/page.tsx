@@ -301,7 +301,9 @@ return (
         {/* PREVIEW */}
 
         <div
-          style={{
+  ref={previewRef}
+  style={{
+
             background: "white",
             borderRadius: "20px",
             overflow: "hidden",
@@ -356,6 +358,23 @@ return (
                 Gs {total.toLocaleString("es-PY")}
               </h3>
             </div>
+
+<button
+  onClick={descargarPNG}
+  style={{
+    width: "100%",
+    marginTop: "12px",
+    padding: "12px",
+    background: "#16a34a",
+    color: "white",
+    border: "none",
+    borderRadius: "12px",
+    fontWeight: "bold",
+    cursor: "pointer",
+  }}
+>
+  📸 Descargar PNG
+</button>
 
             <div style={{ marginTop: "20px" }}>
               <b>Nombre:</b> {nombre}
