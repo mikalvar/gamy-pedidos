@@ -415,9 +415,6 @@ export default function Home() {
   <b>Productos:</b>
 
   <div
-    <div>
-  <b>Horario:</b> {horario || "-"}
-</div>
     style={{
       marginTop: "4px",
       whiteSpace: "pre-wrap",
@@ -426,7 +423,10 @@ export default function Home() {
     {productos || "-"}
   </div>
 </div>
-
+              
+    <div>
+  <b>Horario:</b> {horario || "-"}
+</div>
             <div
               style={{
                 marginTop: "16px",
