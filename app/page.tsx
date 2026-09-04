@@ -413,9 +413,18 @@ export default function Home() {
                   {maps || "-"}
                 </div>
               </div>
-              <div><b>Fragancia:</b> {fragancia || "-"}</div>
-              <div><b>Horario:</b> {horario || "-"}</div>
-            </div>
+              <div>
+  <b>Productos:</b>
+
+  <div
+    style={{
+      marginTop: "4px",
+      whiteSpace: "pre-wrap",
+    }}
+  >
+    {productos || "-"}
+  </div>
+</div>
 
             <div
               style={{
