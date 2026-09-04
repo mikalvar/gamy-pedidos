@@ -284,6 +284,26 @@ export default function Home() {
                 style={inputStyle}
               />
             </div>
+<div>
+  <label style={labelStyle}>
+    Observaciones
+  </label>
+
+  <textarea
+    value={observaciones}
+    onChange={(e) =>
+      setObservaciones(e.target.value)
+    }
+    rows={4}
+    style={{
+      ...inputStyle,
+      resize: "vertical",
+    }}
+    placeholder="Observaciones para delivery o cobranza"
+  />
+</div>
+``
+            
           </div>
 
           <div
