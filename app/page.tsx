@@ -311,8 +311,6 @@ export default function Home() {
     placeholder="Observaciones para delivery o cobranza"
   />
 </div>
-``
-            
           </div>
 
           <div
