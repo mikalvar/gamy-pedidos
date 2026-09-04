@@ -475,19 +475,6 @@ export default function Home() {
                 gap: "24px",
               }}
             >
-              <div style={{ textAlign: "center" }}>
-                <hr style={{ border: "none", borderTop: "1px solid #cbd5e1" }} />
-                <span style={{ fontSize: "12px", color: "#64748b", marginTop: "4px", display: "block" }}>
-                  Firma Cliente
-                </span>
-              </div>
-              <div style={{ textAlign: "center" }}>
-                <hr style={{ border: "none", borderTop: "1px solid #cbd5e1" }} />
-                <span style={{ fontSize: "12px", color: "#64748b", marginTop: "4px", display: "block" }}>
-                  Firma Vendedor
-                </span>
-              </div>
-            </div>
           </div>
         </div>
       </div>
