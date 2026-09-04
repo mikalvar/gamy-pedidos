@@ -32,18 +32,40 @@ export default function Home() {
   }, [cuotas, montoCuota, entregaInicial, delivery]);
 
   const descargarPNG = async () => {
-    if (!previewRef.current) return;
+  if (!previewRef.current) return;
 
-    try {
-      const dataUrl = await toPng(previewRef.current, {
-        quality: 1,
-        pixelRatio: 2,
-      });
-      saveAs(dataUrl, `orden-${ci || "cliente"}.png`);
-    } catch (err) {
-      console.error("Error al exportar imagen:", err);
+  const boton =
+    document.getElementById("btn-descargar");
+
+  try {
+    if (boton) {
+      boton.style.display = "none";
     }
-  };
+
+    const dataUrl = await toPng(previewRef.current, {
+      quality: 1,
+      pixelRatio: 2,
+    });
+
+    if (boton) {
+      boton.style.display = "block";
+    }
+
+    saveAs(
+      dataUrl,
+      `orden-${ci || "cliente"}.png`
+    );
+  } catch (err) {
+    console.error(
+      "Error al exportar imagen:",
+      err
+    );
+
+    if (boton) {
+      boton.style.display = "block";
+    }
+  }
+};
 
   const inputStyle = {
     width: "100%",
