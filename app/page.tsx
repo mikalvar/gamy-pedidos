@@ -39,7 +39,6 @@ const [procesandoCI, setProcesandoCI] =
     return cuotas * montoCuota + entregaInicial + delivery;
   }, [cuotas, montoCuota, entregaInicial, delivery]);
 
-  const descargarPNG = async () => {
     const leerCedula = async () => {
   if (!imagenCI) return;
 
@@ -67,6 +66,7 @@ const [procesandoCI, setProcesandoCI] =
     setProcesandoCI(false);
   }
 };
+  const descargarPNG = async () => {
   if (!previewRef.current) return;
 
   const boton =
