@@ -18,6 +18,8 @@ export default function Home() {
   const [fragancia, setFragancia] = useState("");
   const [horario, setHorario] = useState("");
   const [vendedor, setVendedor] = useState("");
+  const [observaciones, setObservaciones] =
+  useState("");
 
   // Financiación
   const [cuotas, setCuotas] = useState<number>(1);
