@@ -301,8 +301,9 @@ export default function Home() {
           </div>
 
           <button
-            onClick={descargarPNG}
-            style={{
+  id="btn-descargar"
+  onClick={descargarPNG}
+  style={{
               width: "100%",
               marginTop: "16px",
               padding: "12px",
