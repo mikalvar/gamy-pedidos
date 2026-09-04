@@ -466,15 +466,6 @@ export default function Home() {
 </div>
               
             </div>
-
-            <div
-              style={{
-                marginTop: "36px",
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "24px",
-              }}
-            >
           </div>
         </div>
       </div>
