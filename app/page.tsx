@@ -39,21 +39,6 @@ const [procesandoCI, setProcesandoCI] =
     return cuotas * montoCuota + entregaInicial + delivery;
   }, [cuotas, montoCuota, entregaInicial, delivery]);
 
-    const texto =
-      resultado.data.text;
-
-    console.log(texto);
-
-    alert(
-      "OCR completado. Revisa la consola para ver el texto detectado."
-    );
-
-    setProcesandoCI(false);
-  } catch (error) {
-    console.error(error);
-    setProcesandoCI(false);
-  }
-};
   const descargarPNG = async () => {
   if (!previewRef.current) return;
 
