@@ -21,11 +21,6 @@ export default function Home() {
   const [vendedor, setVendedor] = useState("");
   const [observaciones, setObservaciones] =
   useState("");
-  const [imagenCI, setImagenCI] =
-  useState<File | null>(null);
-
-const [procesandoCI, setProcesandoCI] =
-  useState(false);
 
   // Financiación
   const [cuotas, setCuotas] = useState<number>(1);
