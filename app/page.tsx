@@ -147,7 +147,7 @@ const [procesandoCI, setProcesandoCI] =
           </h1>
 
           <div style={{ display: "grid", gap: "14px" }}>
-            <div
+          // <div
   style={{
     background: "#f9fafb",
     padding: "12px",
