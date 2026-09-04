@@ -40,6 +40,33 @@ const [procesandoCI, setProcesandoCI] =
   }, [cuotas, montoCuota, entregaInicial, delivery]);
 
   const descargarPNG = async () => {
+    const leerCedula = async () => {
+  if (!imagenCI) return;
+
+  try {
+    setProcesandoCI(true);
+
+    const resultado =
+      await Tesseract.recognize(
+        imagenCI,
+        "spa"
+      );
+
+    const texto =
+      resultado.data.text;
+
+    console.log(texto);
+
+    alert(
+      "OCR completado. Revisa la consola para ver el texto detectado."
+    );
+
+    setProcesandoCI(false);
+  } catch (error) {
+    console.error(error);
+    setProcesandoCI(false);
+  }
+};
   if (!previewRef.current) return;
 
   const boton =
