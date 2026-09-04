@@ -39,7 +39,7 @@ const [procesandoCI, setProcesandoCI] =
     return cuotas * montoCuota + entregaInicial + delivery;
   }, [cuotas, montoCuota, entregaInicial, delivery]);
 
-    const leerCedula = async () => {
+   // const leerCedula = async () => {
   if (!imagenCI) return;
 
   try {
