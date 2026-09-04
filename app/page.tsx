@@ -15,7 +15,7 @@ export default function Home() {
   const [ciudad, setCiudad] = useState("");
   const [barrio, setBarrio] = useState("");
   const [maps, setMaps] = useState("");
-  const [fragancia, setFragancia] = useState("");
+  const [productos, setProductos] = useState("");
   const [horario, setHorario] = useState("");
   const [vendedor, setVendedor] = useState("");
   const [observaciones, setObservaciones] =
