@@ -69,8 +69,9 @@ const [procesandoCI, setProcesandoCI] =
   const descargarPNG = async () => {
   if (!previewRef.current) return;
 
-  const boton =
-    document.getElementById("btn-descargar");
+  const boton = document.getElementById(
+  "btn-descargar"
+) as HTMLElement | null;
 
   try {
     if (boton) {
