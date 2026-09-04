@@ -430,7 +430,6 @@ export default function Home() {
             <div style={{ marginTop: "16px", fontSize: "13px", color: "#64748b", display: "grid", gap: "4px" }}>
               <div><b>Fecha Registro:</b> {fechaRegistro}</div>
               <div><b>Vendedor:</b> {vendedor || "-"}</div>
-
               <div
   style={{
     marginTop: "10px",
