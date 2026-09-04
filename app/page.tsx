@@ -191,13 +191,22 @@ export default function Home() {
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
               <div>
-                <label style={labelStyle}>Fragancia</label>
-                <input
-                  value={fragancia}
-                  onChange={(e) => setFragancia(e.target.value)}
-                  placeholder="Nombre del perfume"
-                  style={inputStyle}
-                />
+                <label style={labelStyle}>
+  Productos
+</label>
+
+<textarea
+  value={productos}
+  onChange={(e) =>
+    setProductos(e.target.value)
+  }
+  rows={4}
+  style={{
+    ...inputStyle,
+    resize: "vertical",
+  }}
+  placeholder="Scandal x1&#10;Devotion x1&#10;Good Girl x1"
+/>
               </div>
 
               <div>
