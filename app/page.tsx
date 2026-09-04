@@ -146,6 +146,49 @@ const [procesandoCI, setProcesandoCI] =
           </h1>
 
           <div style={{ display: "grid", gap: "14px" }}>
+            <div
+  style={{
+    background: "#f9fafb",
+    padding: "12px",
+    borderRadius: "10px",
+    border: "1px solid #e5e7eb",
+  }}
+>
+  <label
+    style={labelStyle}
+  >
+    Foto de Cédula
+  </label>
+
+  <input
+    type="file"
+    accept="image/*"
+    onChange={(e) =>
+      setImagenCI(
+        e.target.files?.[0] || null
+      )
+    }
+  />
+
+  <button
+    type="button"
+    onClick={leerCedula}
+    disabled={procesandoCI}
+    style={{
+      marginTop: "10px",
+      padding: "8px 12px",
+      background: "#2563eb",
+      color: "white",
+      border: "none",
+      borderRadius: "8px",
+      cursor: "pointer",
+    }}
+  >
+    {procesandoCI
+      ? "Leyendo..."
+      : "Leer Datos"}
+  </button>
+</div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
               <div>
                 <label style={labelStyle}>Nombre y Apellido</label>
