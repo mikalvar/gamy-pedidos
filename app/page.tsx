@@ -39,18 +39,6 @@ const [procesandoCI, setProcesandoCI] =
     return cuotas * montoCuota + entregaInicial + delivery;
   }, [cuotas, montoCuota, entregaInicial, delivery]);
 
-   // const leerCedula = async () => {
-  if (!imagenCI) return;
-
-  try {
-    setProcesandoCI(true);
-
-    const resultado =
-      await Tesseract.recognize(
-        imagenCI,
-        "spa"
-      );
-
     const texto =
       resultado.data.text;
 
