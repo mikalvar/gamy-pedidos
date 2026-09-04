@@ -3,7 +3,7 @@
 import { useMemo, useRef, useState } from "react";
 import { toPng } from "html-to-image";
 import { saveAs } from "file-saver";
-import Tesseract from "tesseract.js";
+// import Tesseract from "tesseract.js";
 
 export default function Home() {
   const previewRef = useRef<HTMLDivElement>(null);
